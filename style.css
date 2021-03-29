@@ -59,7 +59,6 @@ main {
 }
 
 .startBtn__container {
-	display: none;
 	position: absolute;
 	padding: 10px;
 	top: 50%;
@@ -80,22 +79,22 @@ main {
 	cursor: pointer;
 }
 
-.redPick {
+.red.light {
 	transform: scale(1.05);
 	background-color: rgb(253, 136, 136);
 }
 
-.bluePick {
+.blue.light {
 	transform: scale(1.05);
 	background-color: rgb(73, 167, 255);
 }
 
-.purplePick {
+.purple.light {
 	transform: scale(1.05);
 	background-color: rgb(193, 164, 252);
 }
 
-.greenPick {
+.green.light {
 	transform: scale(1.05);
 	background-color: mediumspringgreen;
 }
