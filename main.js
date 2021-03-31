@@ -6,7 +6,7 @@ const green = document.querySelector('#green');
 
 class Game {
 	constructor() {
-		this.lastLevel = 10;
+		this.lastLevel = 1;
 		this.colors = {
 			blue,
 			red,
@@ -14,11 +14,10 @@ class Game {
 			green,
 		};
 		this.sequence = [];
-
 		this.toggleBtn();
 		this.startGame();
 		this.generateSequence();
-		setTimeout(() => this.nextLevel(), 600);
+		setTimeout(() => this.nextLevel(), 450);
 	}
 
 	toggleBtn() {
@@ -81,23 +80,23 @@ class Game {
 				this.level++;
 
 				if (this.level > this.lastLevel) {
-					this.victory();
+					setTimeout(() => this.victory(), 700);
 				} else {
 					setTimeout(() => this.nextLevel(), 1500);
 				}
 			}
 		} else {
-			this.lose();
+			setTimeout(() => this.lose(), 700);
 		}
 	};
 
 	victory() {
-		console.log('You win!');
+		Swal.fire('You Win!', 'Play Again!', 'success');
 		setTimeout(() => this.toggleBtn(), 1000);
 	}
 
 	lose() {
-		console.log('You Lost!');
+		Swal.fire('You Lose!', 'Try Again you will do it the nex time!', 'error');
 		setTimeout(() => {
 			this.removeListeners();
 			this.toggleBtn();
